@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CS3218Tut</string>
+    <string name="calculator_app_name">GixCalculator</string>
+    <string name="graph_app_name">Graph</string>
+    <string name="action_settings">Settings</string>
+    <string name="sin_btn">sin</string>
+    <string name="cos_btn">cos</string>
+    <string name="tan_btn">tan</string>
+    <string name="log_btn">log</string>
+    <string name="ac_btn">AC</string>
+    <string name="c_btn">C</string>
+    <string name="sqrt_btn">\u221a</string>
+    <string name="plus_btn">+</string>
+    <string name="minus_btn">-</string>
+    <string name="multiply_btn">\u00D7</string>
+    <string name="dot_btn">.</string>
+    <string name="equal_btn">=</string>
+    <string name="divide_btn">\u00F7</string>
+    <string name="one_btn">1</string>
+    <string name="two_btn">2</string>
+    <string name="three_btn">3</string>
+    <string name="four_btn">4</string>
+    <string name="five_btn">5</string>
+    <string name="six_btn">6</string>
+    <string name="seven_btn">7</string>
+    <string name="eight_btn">8</string>
+    <string name="nine_btn">9</string>
+    <string name="zero_btn">0</string>
+</resources>
