@@ -28,4 +28,13 @@
     <string name="eight_btn">8</string>
     <string name="nine_btn">9</string>
     <string name="zero_btn">0</string>
+
+    <string name="a_plus_btn">A+</string>
+    <string name="a_minus_btn">A-</string>
+    <string name="p_plus_btn">P+</string>
+    <string name="p_minus_btn">P-</string>
+    <string name="f_plus_btn">F+</string>
+    <string name="f_minus_btn">F-</string>
+
+    <string name="back_btn">Go Back</string>
 </resources>

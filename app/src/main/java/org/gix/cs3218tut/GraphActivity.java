@@ -22,6 +22,7 @@ public class GraphActivity extends Activity {
     public  static int      bufferSize;     // in bytes
 
     public void goToMainActivity(View view) {
+        surfaceView.drawFlag = false;
         finish();
     }
 

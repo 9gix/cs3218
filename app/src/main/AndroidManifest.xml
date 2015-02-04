@@ -23,6 +23,7 @@
         </activity>
         <activity
             android:name="org.gix.cs3218tut.GraphActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/graph_app_name"
             android:parentActivityName="org.gix.cs3218tut.MainActivity" >
         </activity>
