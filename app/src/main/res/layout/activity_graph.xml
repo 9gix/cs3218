@@ -129,7 +129,7 @@
         android:id="@+id/displayFunction"
         android:layout_gravity="center_horizontal" />
 
-    <org.gix.cs3218tut.CSurfaceViewGraph
+    <org.gix.cs3218eugene.CSurfaceViewGraph
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/surfaceView"/>
