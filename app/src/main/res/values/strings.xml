@@ -4,6 +4,7 @@
     <string name="app_name">CS3218</string>
     <string name="calculator_app_name">GixCalculator</string>
     <string name="graph_app_name">Graph</string>
+    <string name="sound_app_name">Sound</string>
     <string name="sin_btn">sin</string>
     <string name="cos_btn">cos</string>
     <string name="tan_btn">tan</string>
@@ -36,4 +37,12 @@
     <string name="f_minus_btn">F-</string>
 
     <string name="back_btn">Go Back</string>
+    <string name="capture_sound">Capture</string>
+
+    <string name="t1_btn">Simple Calculator (Tutorial 1)</string>
+    <string name="t2_btn">Graphing (Tutorial 2)</string>
+    <string name="t3_btn">Sound (Tutorial 3)</string>
+
+    <string name="action_settings">Settings</string>
+
 </resources>

@@ -8,21 +8,28 @@
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="org.gix.cs3218eugene.CalculatorActivity"
+            android:name="CalculatorActivity"
             android:label="@string/calculator_app_name"
             android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
         </activity>
         <activity
-            android:name="org.gix.cs3218eugene.GraphActivity"
+            android:name="GraphActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/graph_app_name"
             android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
         </activity>
+        <activity
+            android:name="SoundActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/sound_app_name"
+            android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
+        </activity>
     </application>
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 </manifest>
