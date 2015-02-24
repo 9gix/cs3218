@@ -26,12 +26,6 @@ public class SoundActivity extends Activity {
     }
 
     @Override
-    protected void onStop() {
-        super.onStop();
-    }
-
-
-    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sound);
@@ -69,7 +63,6 @@ public class SoundActivity extends Activity {
         }
         else {
             surfaceView.drawThread.soundCapture = Boolean.valueOf(true);
-
         }
     }
 

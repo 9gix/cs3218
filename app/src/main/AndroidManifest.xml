@@ -28,6 +28,12 @@
             android:label="@string/sound_app_name"
             android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
         </activity>
+        <activity
+            android:name="CalculusActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/calculus_app_name"
+            android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.RECORD_AUDIO"/>
