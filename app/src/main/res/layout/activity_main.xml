@@ -41,4 +41,28 @@
         android:id="@+id/t4_btn"
         android:onClick="launchCalculus"
         android:layout_below="@+id/t3_btn" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/t5_btn"
+        android:id="@+id/t5_btn"
+        android:onClick="launchFFT"
+        android:layout_below="@+id/t4_btn" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/t6_btn"
+        android:id="@+id/t6_btn"
+        android:onClick="launchLiveFFT"
+        android:layout_below="@+id/t5_btn" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/t7_btn"
+        android:id="@+id/t7_btn"
+        android:onClick="launchSpectrogram"
+        android:layout_below="@+id/t6_btn" />
 </RelativeLayout>

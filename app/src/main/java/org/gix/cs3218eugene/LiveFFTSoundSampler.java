@@ -3,16 +3,18 @@ package org.gix.cs3218eugene;
 import android.media.AudioRecord;
 import android.util.Log;
 
-
-public class SoundSampler {
+/**
+ * Created by Eugene on 18/3/2015.
+ */
+public class LiveFFTSoundSampler {
 
     private static final int  FS = 16000;     // sampling frequency
-    public  AudioRecord       audioRecord;
+    public AudioRecord audioRecord;
     private int               audioEncoding = 2;
     private int               nChannels = 16;
     private Thread            recordingThread;
 
-    public SoundSampler(SoundActivity mAct) throws Exception
+    public LiveFFTSoundSampler(LiveFFTActivity mAct) throws Exception
     {
         try {
             if (audioRecord != null) {
@@ -45,8 +47,8 @@ public class SoundSampler {
             throw new Exception();
         }
 
-        SoundActivity.bufferSize = AudioRecord.getMinBufferSize(FS, nChannels, audioEncoding);
-        SoundActivity.buffer = new short[SoundActivity.bufferSize];
+        LiveFFTActivity.bufferSize = AudioRecord.getMinBufferSize(FS, nChannels, audioEncoding);
+        LiveFFTActivity.buffer = new short[LiveFFTActivity.bufferSize];
 
         audioRecord.startRecording();
 
@@ -56,9 +58,8 @@ public class SoundSampler {
             {
                 while (true)
                 {
-
-                    audioRecord.read(SoundActivity.buffer, 0, SoundActivity.bufferSize);
-                    SoundActivity.surfaceView.drawThread.setBuffer(SoundActivity.buffer);
+                    audioRecord.read(LiveFFTActivity.buffer, 0, LiveFFTActivity.bufferSize);
+                    LiveFFTActivity.surfaceView.drawThread.setBuffer(LiveFFTActivity.buffer);
 
                 }
             }
@@ -68,8 +69,4 @@ public class SoundSampler {
         return;
 
     }
-
-
 }
-
-

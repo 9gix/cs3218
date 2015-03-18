@@ -6,6 +6,10 @@
     <string name="graph_app_name">Graph</string>
     <string name="sound_app_name">Sound</string>
     <string name="calculus_app_name">Calculus</string>
+    <string name="fft_app_name">FFT</string>
+    <string name="live_fft_app_name">Live FFT on Sound</string>
+    <string name="spectrogram_app_name">Spectrogram</string>
+
 
     <string name="sin_btn">sin</string>
     <string name="cos_btn">cos</string>
@@ -37,6 +41,7 @@
     <string name="p_minus_btn">P-</string>
     <string name="f_plus_btn">F+</string>
     <string name="f_minus_btn">F-</string>
+    <string name="fft_btn">FFT</string>
 
     <string name="back_btn">Go Back</string>
     <string name="capture_sound">Capture</string>
@@ -47,6 +52,9 @@
     <string name="t2_btn">Graphing (Tutorial 2)</string>
     <string name="t3_btn">Sound (Tutorial 3)</string>
     <string name="t4_btn">Calculus (Tutorial 4)</string>
+    <string name="t5_btn">FFT (Tutorial 5a)</string>
+    <string name="t6_btn">Live FFT (Tutorial 5b)</string>
+    <string name="t7_btn">Spectrogram (Tutorial 5c)</string>
 
     <string name="action_settings">Settings</string>
 

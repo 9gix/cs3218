@@ -57,4 +57,19 @@ public class MainActivity extends ActionBarActivity {
         Intent intent  = new Intent(this, CalculusActivity.class);
         startActivity(intent);
     }
+
+    public void launchFFT(View v) {
+        Intent intent  = new Intent(this, FFTActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchLiveFFT(View v) {
+        Intent intent  = new Intent(this, LiveFFTActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchSpectrogram(View v) {
+        Intent intent  = new Intent(this, SpectrogramActivity.class);
+        startActivity(intent);
+    }
 }

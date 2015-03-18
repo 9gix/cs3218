@@ -1,41 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.gix.cs3218eugene">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.gix.cs3218eugene" >
 
-    <application android:allowBackup="true" android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme">
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="CalculatorActivity"
+            android:name=".CalculatorActivity"
             android:label="@string/calculator_app_name"
-            android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
+            android:parentActivityName=".MainActivity" >
         </activity>
         <activity
-            android:name="GraphActivity"
+            android:name=".GraphActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/graph_app_name"
-            android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
+            android:parentActivityName=".MainActivity" >
         </activity>
         <activity
-            android:name="SoundActivity"
+            android:name=".SoundActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/sound_app_name"
-            android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
+            android:parentActivityName=".MainActivity" >
         </activity>
         <activity
-            android:name="CalculusActivity"
+            android:name=".CalculusActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/calculus_app_name"
-            android:parentActivityName="org.gix.cs3218eugene.MainActivity" >
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".FFTActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/fft_app_name"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".LiveFFTActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/live_fft_app_name"
+            android:parentActivityName=".MainActivity" >
+        </activity>
+        <activity
+            android:name=".SpectrogramActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/spectrogram_app_name"
+            android:parentActivityName=".MainActivity" >
         </activity>
     </application>
 
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
-    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
 </manifest>

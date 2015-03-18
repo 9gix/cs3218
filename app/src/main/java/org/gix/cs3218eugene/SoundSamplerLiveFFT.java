@@ -3,32 +3,44 @@ package org.gix.cs3218eugene;
 import android.media.AudioRecord;
 import android.util.Log;
 
+/**
+ * Created by ngtk on 22/1/15.
+ */
+public class SoundSamplerLiveFFT {
 
-public class SoundSampler {
 
     private static final int  FS = 16000;     // sampling frequency
     public  AudioRecord       audioRecord;
     private int               audioEncoding = 2;
     private int               nChannels = 16;
+    private LiveFFTActivity   liveFFTActivity;
     private Thread            recordingThread;
 
-    public SoundSampler(SoundActivity mAct) throws Exception
+   
+    public SoundSamplerLiveFFT(LiveFFTActivity mAct) throws Exception
     {
+        
+        liveFFTActivity = mAct;
+
         try {
             if (audioRecord != null) {
                 audioRecord.stop();
                 audioRecord.release();
             }
             audioRecord = new AudioRecord(1, FS, nChannels, audioEncoding, AudioRecord.getMinBufferSize(FS, nChannels, audioEncoding));
+
         }
         catch (Exception e) {
-            Log.d("SoundSampler", e.getMessage());
+            Log.e("LiveFFT", e.getMessage());
             throw new Exception();
         }
 
+
         return;
 
+
     }
+
 
 
     public void init() throws Exception
@@ -39,14 +51,16 @@ public class SoundSampler {
                 audioRecord.release();
             }
             audioRecord = new AudioRecord(1, FS, nChannels, audioEncoding, AudioRecord.getMinBufferSize(FS, nChannels, audioEncoding));
+
         }
         catch (Exception e) {
             Log.d("Error in Init() ", e.getMessage());
             throw new Exception();
         }
 
-        SoundActivity.bufferSize = AudioRecord.getMinBufferSize(FS, nChannels, audioEncoding);
-        SoundActivity.buffer = new short[SoundActivity.bufferSize];
+
+        LiveFFTActivity.bufferSize = AudioRecord.getMinBufferSize(FS, nChannels, audioEncoding);
+        LiveFFTActivity.buffer = new short[LiveFFTActivity.bufferSize];
 
         audioRecord.startRecording();
 
@@ -57,8 +71,8 @@ public class SoundSampler {
                 while (true)
                 {
 
-                    audioRecord.read(SoundActivity.buffer, 0, SoundActivity.bufferSize);
-                    SoundActivity.surfaceView.drawThread.setBuffer(SoundActivity.buffer);
+                    audioRecord.read(LiveFFTActivity.buffer, 0, LiveFFTActivity.bufferSize);
+                    liveFFTActivity.surfaceView.drawThread.setBuffer(LiveFFTActivity.buffer);
 
                 }
             }
@@ -71,5 +85,3 @@ public class SoundSampler {
 
 
 }
-
-
