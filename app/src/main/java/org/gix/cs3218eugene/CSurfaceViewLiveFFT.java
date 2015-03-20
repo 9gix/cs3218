@@ -123,6 +123,7 @@ public class CSurfaceViewLiveFFT extends SurfaceView implements SurfaceHolder.Ca
         private SurfaceHolder  soundSurfaceHolder;
         private int            drawScale = 5;
         private double         mxIntensity;
+        public boolean liveFFTCapture = true;
 
         public DrawThread(SurfaceHolder paramContext, Context paramHandler, Handler arg4)
         {
@@ -315,9 +316,10 @@ public class CSurfaceViewLiveFFT extends SurfaceView implements SurfaceHolder.Ca
                 {
                     if (localCanvas != null)
                         soundSurfaceHolder.unlockCanvasAndPost(localCanvas);
-
-                    segmentIndex = -1;
-                    FFTComputed = Boolean.valueOf(false);
+                    if (liveFFTCapture) {
+                        segmentIndex = -1;
+                        FFTComputed = Boolean.valueOf(false);
+                    }
                 }
             }
         }

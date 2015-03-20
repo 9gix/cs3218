@@ -50,13 +50,11 @@ public class LiveFFTActivity extends Activity {
         super.onPause();
     }
 
-    public void captureSound(View v) {
-        if (surfaceView.drawThread.soundCapture) {
-            surfaceView.drawThread.soundCapture = Boolean.valueOf(false);
-            surfaceView.drawThread.segmentIndex = -1;
-        }
-        else {
-            surfaceView.drawThread.soundCapture = Boolean.valueOf(true);
+    public void captureSoundLiveFFT(View v) {
+        if (surfaceView.drawThread.liveFFTCapture) {
+            surfaceView.drawThread.liveFFTCapture = false;
+        } else {
+            surfaceView.drawThread.liveFFTCapture = true;
         }
     }
 }
