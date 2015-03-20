@@ -110,7 +110,7 @@ public class CSurfaceViewSpectrogram extends SurfaceView implements SurfaceHolde
         private Paint		   soundLinePaint2;
         private Paint          soundLinePaint3;
         private SurfaceHolder  soundSurfaceHolder;
-        private int            drawScale = 5;
+        private int            drawScale = 3;
         private double         mxIntensity;
         public boolean liveFFTCapture = true;
 
@@ -225,11 +225,6 @@ public class CSurfaceViewSpectrogram extends SurfaceView implements SurfaceHolde
 
             }
 
-            // print the maximum intensity
-            paint.setColor(Color.BLACK);
-            paint.setTextSize(30);
-            canvas.drawText("max Intensity = " + String.valueOf(mxIntensity), 100, height-30, paint);
-
             // display the signal in temporal domain
             xStart = 0;
             while (xStart < FFT_Len-1)  {
@@ -239,7 +234,7 @@ public class CSurfaceViewSpectrogram extends SurfaceView implements SurfaceHolde
                 int yStart1 = yStart + height/4;
                 int yStop1  = yStop  + height/4;
 
-                canvas.drawLine(xStart, yStart1, xStart +1, yStop1, soundLinePaint2);
+                canvas.drawPoint(xStart, yStart1, soundLinePaint2);
 
                 if (xStart %100 == 0) {
                     paint.setColor(Color.BLACK);
@@ -248,20 +243,13 @@ public class CSurfaceViewSpectrogram extends SurfaceView implements SurfaceHolde
                 xStart++;
             }
 
-
             // display the fft results
             int xStepSz = 1;
-            // draw the vertical axis (at DC location)
-            canvas.drawLine(FFT_Len/2, height, FFT_Len/2, 0, soundLinePaint3);
-            for (int i=0; i<FFT_Len-1; i+=xStepSz) {
-                canvas.drawLine(i/xStepSz, (int)soundFFTMag[i], i/xStepSz+1, (int)soundFFTMag[i+1], soundLinePaint);
 
-                if ((i-12) % 50 == 0) {
-                    paint.setColor(Color.BLACK);
-                    paint.setTextSize(20);
-                    canvas.drawText(Integer.toString(i-FFT_Len/2), i, height*7/8, paint);
-                }
-
+            for (int i=0; i<(FFT_Len-1)/2; i+=xStepSz) {
+                int intensity = 500 * (int) (soundFFTMag[i]/ mxIntensity);
+                soundLinePaint.setARGB(255, 255 - intensity, intensity, intensity);
+                canvas.drawPoint(rectPos, i + (height * 3/4), soundLinePaint);
             }
             rectPos = (rectPos % 1150) + 1;
         }
@@ -295,6 +283,7 @@ public class CSurfaceViewSpectrogram extends SurfaceView implements SurfaceHolde
                 try
                 {
                     localCanvas = soundSurfaceHolder.lockCanvas(new Rect(rectPos, 0, rectPos+1, 1150));
+                    //localCanvas = soundSurfaceHolder.lockCanvas(null);
                     synchronized (soundSurfaceHolder)
                     {
                         if (localCanvas != null)
