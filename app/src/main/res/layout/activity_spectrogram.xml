@@ -10,7 +10,7 @@
         tools:context=".MainActivity" >
 
     <org.gix.cs3218eugene.CSurfaceViewSpectrogram
-        android:id="@+id/surfaceView"
+        android:id="@+id/surfaceViewSpectrogram"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
